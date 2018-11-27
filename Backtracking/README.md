@@ -131,3 +131,37 @@ public class Main {
     時間：西元 2018 年 11 月 */
 }
 ```
+
+
+利用BFS
+```java
+public class Main {
+	
+	static int num[]= {1,2,3,4};
+	static int solution[]=new int [4],used[]=new int[num.length];
+
+	public static void main(String[] args) {
+		backtracking(0);
+	}
+	
+	public static void backtracking(int n) {
+		
+		if(n==4) {
+			for(int i=0;i<4;i++) {
+				System.out.print(solution[i]+" ");
+			}
+			System.out.println();
+		}else {
+			for(int i=n;i<4;i++) {
+				if(used[i]==0) {
+					solution[n]=num[i];
+					used[i]=1;
+				}
+				backtracking(n+1);
+				used[n]=0;
+			}
+			
+		}
+	}
+}
+```
