@@ -165,3 +165,28 @@ public class Main {
 	}
 }
 ```
+
+利用BFS版本2
+```java
+public class Main {
+	
+	static int num[]= {1,2,3,4};
+	static int solution[]=new int [4],used[]=new int[num.length];
+
+	public static void main(String[] args) {
+		backtracking(0,0);
+	}
+	
+	public static void backtracking(int n,int size) {
+			for(int i=0;i<4;i++) {
+				System.out.print(solution[i]+" ");
+			}
+			System.out.println();
+			for(;n<4;n++) {
+				solution[size]=num[n];
+				backtracking(n+1,size+1);
+				solution[size]=0;
+			}
+	}
+}
+```
